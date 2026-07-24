@@ -10,7 +10,6 @@ let h2 = document.querySelector("h2");
 
 document.addEventListener("keypress", function () {
     if(started == false) {
-        console.log("game is stard");
         started = true;
         
         levelUp();
@@ -46,7 +45,7 @@ function checkAns(idx) {
             setTimeout(levelUp(), 1000);
         }
     } else {
-        h2.innerHTML = `game over! Your score <b>${level}</b> <br>press any key to start`;
+        h2.innerHTML = `Game Over! Your Score : <b>${level}</b> <br>Press Any Key To Start Again`;
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function () {
             document.querySelector("body").style.backgroundColor = "white";

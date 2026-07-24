@@ -16,19 +16,19 @@ body {
 }
 
 .yellow {
-    background-color: yellow;
+    background-color: rgb(254, 254, 144);
 }
 
 .red {
-    background-color: red;
+    background-color: rgb(211, 66, 66);
 }
 
 .purple {
-    background-color: purple;
+    background-color: rgb(196, 53, 196);
 }
 
 .green {
-    background-color: green;
+    background-color: rgb(80, 215, 80);
 }
 
 .flash {
