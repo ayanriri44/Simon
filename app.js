@@ -34,6 +34,7 @@ function levelUp() {
     randBtn = document.querySelector(`.${randColor}`);
     gameSeq.push(randColor);
     console.log(gameSeq);
+    playSound();
     btnFlash(randBtn);
 }
 
@@ -45,10 +46,11 @@ function checkAns(idx) {
             setTimeout(levelUp(), 1000);
         }
     } else {
+        wrongClick();
         h2.innerHTML = `Game Over! Your Score : <b>${level}</b> <br>Press Any Key To Start Again`;
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function () {
-            document.querySelector("body").style.backgroundColor = "white";
+            document.querySelector("body").style.backgroundColor = "black";
         }, 200);
         reset();
     }
@@ -58,16 +60,32 @@ function checkAns(idx) {
 function btnPress() {
     let btn = this;
     btnFlash(btn);
+    playSound();
 
     btnColor = btn.getAttribute("id");
     userSeq.push(btnColor);
     checkAns(userSeq.length-1);
 }
 
+
 let allBtns = document.querySelectorAll(".btn");
 for(btn of allBtns) {
     btn.addEventListener("click", btnPress);
 }
+
+
+let clickSound = new Audio("sounds/click.mp3");
+function playSound() {
+    clickSound.currentTime = 0;
+    clickSound.play();
+}
+
+let gameOver = new Audio("sounds/wrong.mp3");
+function wrongClick() {
+    gameOver.currentTime = 0;
+    gameOver.play();
+}
+
 
 function reset() {
     started = false;
