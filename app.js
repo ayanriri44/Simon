@@ -5,8 +5,13 @@ let btns = ["yellow", "red", "purple", "green"];
 
 let started = false;
 let level = 0;
+let highest = 0;
 
-let h2 = document.querySelector("h2");
+let h2 = document.querySelector("#press");
+let high = document.querySelector("#high");
+
+let highestScore = Number(localStorage.getItem("highestScore")) || 0;
+
 
 document.addEventListener("keypress", function () {
     if(started == false) {
@@ -47,7 +52,12 @@ function checkAns(idx) {
         }
     } else {
         wrongClick();
+        if(level > highestScore) {
+            highestScore = level;
+            localStorage.setItem("highestScore", highestScore);
+        } 
         h2.innerHTML = `Game Over! Your Score : <b>${level}</b> <br>Press Any Key To Start Again`;
+        high.innerHTML = `Highest Score : ${highestScore}`;
         document.querySelector("body").style.backgroundColor = "red";
         setTimeout(function () {
             document.querySelector("body").style.backgroundColor = "black";
