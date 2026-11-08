@@ -30,8 +30,11 @@ A browser-based memory game inspired by the classic Simon toy. Watch the sequenc
 ## 📁 Project Structure
 
 simon-game/
+
 ├── index.html
+
 ├── style.css
+
 └── app.js
 
 ## 🚀 Getting Started
