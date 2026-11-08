@@ -51,13 +51,6 @@ No installation needed. Just open `index.html` in your browser.
 - Using `setTimeout` for timed animations
 - Toggling CSS classes for visual effects
 
-## 🔮 Future Improvements
-
-- High score saved in `localStorage`
-- Sound effects for each color
-- Difficulty levels and a speed setting
-- Mobile-friendly start button
-
 ## 👤 Author
 
 **Mohd Ayan**
